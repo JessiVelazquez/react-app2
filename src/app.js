@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Form from './components/add-item.js';
+import AddNewItem from './components/add-item.js';
 import Items from './components/items.js';
 
 const API_SERVER = process.env.REACT_APP_API;
@@ -47,7 +47,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Our Items</h1>
-        <Form handleAddItem={this.addItem}>Form</Form>
+        <AddNewItem handleAddItem={this.addItem}/>
         <hr />
         <Items handleDelete={this.deleteItem} itemsList={this.state.items} />
       </div>
