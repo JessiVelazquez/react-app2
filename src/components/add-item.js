@@ -3,6 +3,7 @@ import React from 'react';
 // import {Form, Button} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -31,7 +32,7 @@ class AddNewItem extends React.Component {
   render() {
 
     return (
-      <div>
+      <Jumbotron>
         <Form data-testid="add-form" onSubmit={(e) => this.handleSubmit(e)}>
           <Form.Group>
             <Form.Label>Item</Form.Label>
@@ -45,7 +46,7 @@ class AddNewItem extends React.Component {
             Add Item
           </Button>
         </Form>
-      </div>
+      </Jumbotron>
     );
   }
 }

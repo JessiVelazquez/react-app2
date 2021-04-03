@@ -47,7 +47,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Our Items</h1>
+        <h1>Item Collector</h1>
         <AddNewItem handleAddItem={this.addItem}/>
         <hr />
         <Items handleDelete={this.deleteItem} handleUpdate={this.updateItem} itemsList={this.state.items} />

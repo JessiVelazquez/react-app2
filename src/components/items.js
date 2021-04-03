@@ -1,6 +1,9 @@
 import React from 'react';
 
 import UpdateItemForm from './update-item';
+import Carousel from 'react-bootstrap/Carousel';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Items extends React.Component {
 
@@ -8,21 +11,24 @@ class Items extends React.Component {
 
     return (
       <section>
-        <h2>Items...</h2>
+        <h1>Items</h1>
+        <Carousel style={{ minHeight: "8rem" }}>
         {
           this.props.itemsList.map( (item,idx) =>
-            <div key={idx}>
-              <h3>{item.name}</h3>
-              <p>{item.description}</p>
+            <Carousel.Item key={idx}>
+              <h3>Item {idx + 1}</h3>
+              <h6>Email: {item.name}</h6>
+              <p>Description: {item.description}</p>
               <blockquote>{item.notes}</blockquote>
               <UpdateItemForm item={item} handleUpdate={this.props.handleUpdate} />
-              <button
+              <Button
                 data-testid={`delete-button-${item.name}`}
                 onClick={ () => this.props.handleDelete(item._id) }
-              >Delete Item</button>
-            </div>
+              >Delete Item</Button>
+            </Carousel.Item>
           )
         }
+        </Carousel>
       </section>
     );
   }
