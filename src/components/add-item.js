@@ -16,7 +16,6 @@ class AddNewItem extends React.Component {
   }
 
   handleChange = (e) => {
-    console.log('hi');
     const field = e.target.name;
     const value = e.target.value;
     const formData = this.state.formData;
@@ -26,7 +25,6 @@ class AddNewItem extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    console.log('hi');
     this.props.handleAddItem(this.state.formData)
   }
 

@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   addItem = async (item) => {
-    const API_SERVER = 'http://localhost:3001'
+    console.log('additem', item);
     await axios.post(`${API_SERVER}/items`, item);
     this.getItems();
   }
@@ -37,6 +37,7 @@ class App extends React.Component {
     const response = await axios.get(`${API_SERVER}/items`);
     const items = response.data;
     this.setState({items});
+    console.log("getitems", items);
   }
 
   async componentDidMount() {
@@ -49,7 +50,7 @@ class App extends React.Component {
         <h1>Our Items</h1>
         <AddNewItem handleAddItem={this.addItem}/>
         <hr />
-        <Items handleDelete={this.deleteItem} itemsList={this.state.items} />
+        <Items handleDelete={this.deleteItem} handleUpdate={this.updateItem} itemsList={this.state.items} />
       </div>
     );
   }
