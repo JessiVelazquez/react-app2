@@ -15,7 +15,7 @@ class Items extends React.Component {
         <Carousel style={{ minHeight: "8rem" }}>
         {
           this.props.itemsList.map( (item,idx) =>
-            <Carousel.Item key={idx}>
+            <>
               <h3>Item {idx + 1}</h3>
               <h6>Email: {item.name}</h6>
               <p>Description: {item.description}</p>
@@ -25,7 +25,7 @@ class Items extends React.Component {
                 data-testid={`delete-button-${item.name}`}
                 onClick={ () => this.props.handleDelete(item._id) }
               >Delete Item</Button>
-            </Carousel.Item>
+            </>
           )
         }
         </Carousel>
