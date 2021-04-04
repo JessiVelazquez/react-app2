@@ -1,7 +1,9 @@
 import React from 'react';
+import './app.css';
 
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
 
 import AddNewItem from './components/add-item.js';
 import Items from './components/items.js';
@@ -47,10 +49,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Item Collector</h1>
-        <AddNewItem handleAddItem={this.addItem}/>
-        <hr />
-        <Items handleDelete={this.deleteItem} handleUpdate={this.updateItem} itemsList={this.state.items} />
+        <Container id="title">
+          <h1>Email Collector</h1>
+          <AddNewItem handleAddItem={this.addItem}/>
+        </Container>
+        <Container>
+          <hr />
+          <Items handleDelete={this.deleteItem} handleUpdate={this.updateItem} itemsList={this.state.items} />
+        </Container>
+        <footer>&copy; Jessi Velazquez, Code Fellows</footer>
       </div>
     );
   }

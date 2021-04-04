@@ -1,4 +1,6 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 class UpdateItemForm extends React.Component {
 
@@ -27,10 +29,10 @@ class UpdateItemForm extends React.Component {
 
   render() {
     return (
-      <form data-testid={`update-form-${this.props.item.name}`} onSubmit={(e) => this.handleSubmit(e)}>
+      <Form data-testid={`update-form-${this.props.item.name}`} onSubmit={(e) => this.handleSubmit(e)}>
         <input data-testid={`update-field-${this.props.item.name}`} name="notes" placeholder="Add Notes" onChange={this.handleChange} />
-        <button type="submit">Update Item</button>
-      </form>
+        <Button type="submit">Update Item</Button>
+      </Form>
     );
   }
 }
