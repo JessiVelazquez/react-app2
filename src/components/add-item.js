@@ -33,7 +33,7 @@ class AddNewItem extends React.Component {
 
     return (
       <center>
-      <Jumbotron id="jumbo1" style={{ width: '40rem' }} style={{ height: '20rem' }}>
+      <Jumbotron id="jumbo1" style={{ width: '40rem' }}>
         <center>
         <Form style={{ width: '20rem' }} data-testid="add-form" onSubmit={(e) => this.handleSubmit(e)}>
           <Form.Group>
